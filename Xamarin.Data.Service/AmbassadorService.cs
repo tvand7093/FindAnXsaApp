@@ -18,7 +18,7 @@ namespace Xamarin.Data.Service
         private const String ALL_AMBASSADORS = "https://rest-xamarinambassador.azurewebsites.net/api/values/";
         private const String DETA_AMBASSADOR = "https://rest-xamarinambassador.azurewebsites.net/api/values/{0}";
 #endif
-        // Get all ambassadors
+        // Get all ambassadors - needs to be tested (deserialization may crash)
 
         public async Task<List<XamarinAmbassador>> GetAmbassadorsList()
         {
@@ -38,7 +38,7 @@ namespace Xamarin.Data.Service
             }
         }
 
-        // Get one ambassador by id
+        // Get one ambassador by id - needs to be tested (deserialization may crash)
         public async Task<XamarinAmbassador> GetAmbassadorDetails(int id)
         {
             HttpClient _Client = new HttpClient();
