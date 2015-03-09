@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using Xamarin.Data.Models;
 using System.IO;
+using XamarinSA.Locator.Data.Models;
 
 namespace Xamarin.Data.Controllers
 {
@@ -31,7 +32,7 @@ namespace Xamarin.Data.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            XamarinAmbassador xamarinAmbassador = await db.XamarinAmbassadors.FindAsync(id);
+            Ambassador xamarinAmbassador = await db.XamarinAmbassadors.FindAsync(id);
             if (xamarinAmbassador == null)
             {
                 return HttpNotFound();
@@ -51,7 +52,7 @@ namespace Xamarin.Data.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,FirstName,MiddleName,LastName,City,StateRegion,Country,ContactEmail,TwitterHandle,FacebookName,LinkedInName,Blog,IsCertified,PhotoUri,EventPage,Biography,GpsCoordinates,UniversityId")] XamarinAmbassador xamarinAmbassador)
+        public async Task<ActionResult> Create([Bind(Include = "Id,FirstName,MiddleName,LastName,City,StateRegion,Country,ContactEmail,TwitterHandle,FacebookName,LinkedInName,Blog,IsCertified,PhotoUri,EventPage,Biography,GpsCoordinates,UniversityId")] Ambassador xamarinAmbassador)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +81,7 @@ namespace Xamarin.Data.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            XamarinAmbassador xamarinAmbassador = await db.XamarinAmbassadors.FindAsync(id);
+            Ambassador xamarinAmbassador = await db.XamarinAmbassadors.FindAsync(id);
             if (xamarinAmbassador == null)
             {
                 return HttpNotFound();
@@ -94,7 +95,7 @@ namespace Xamarin.Data.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,FirstName,MiddleName,LastName,City,StateRegion,Country,ContactEmail,TwitterHandle,FacebookName,LinkedInName,Blog,IsCertified,PhotoUri,EventPage,Biography,GpsCoordinates,UniversityId")] XamarinAmbassador xamarinAmbassador)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,FirstName,MiddleName,LastName,City,StateRegion,Country,ContactEmail,TwitterHandle,FacebookName,LinkedInName,Blog,IsCertified,PhotoUri,EventPage,Biography,GpsCoordinates,UniversityId")] Ambassador xamarinAmbassador)
         {
             if (ModelState.IsValid)
             {
@@ -125,7 +126,7 @@ namespace Xamarin.Data.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            XamarinAmbassador xamarinAmbassador = await db.XamarinAmbassadors.FindAsync(id);
+            Ambassador xamarinAmbassador = await db.XamarinAmbassadors.FindAsync(id);
             if (xamarinAmbassador == null)
             {
                 return HttpNotFound();
@@ -138,7 +139,7 @@ namespace Xamarin.Data.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            XamarinAmbassador xamarinAmbassador = await db.XamarinAmbassadors.FindAsync(id);
+            Ambassador xamarinAmbassador = await db.XamarinAmbassadors.FindAsync(id);
             db.XamarinAmbassadors.Remove(xamarinAmbassador);
 
             string path = Server.MapPath("~" + xamarinAmbassador.PhotoUri);

@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Xamarin.Data.Models;
+using XamarinSA.Locator.Data.Models;
 
 namespace Xamarin.Data.Controllers
 {
@@ -13,7 +14,7 @@ namespace Xamarin.Data.Controllers
         private AmbassadorContext context = new AmbassadorContext();
 
         // GET api/values
-        public IEnumerable<XamarinAmbassador> Get()
+        public IEnumerable<Ambassador> Get()
         {
             context.Configuration.ProxyCreationEnabled = false;
             var ambassadors = context.XamarinAmbassadors.ToList();
@@ -21,7 +22,7 @@ namespace Xamarin.Data.Controllers
         }
 
         // GET api/values/5
-        public XamarinAmbassador Get(int id)
+        public Ambassador Get(int id)
         {
             var ambassadors = context.XamarinAmbassadors.Where(x => x.Id == id).SingleOrDefault();
             return ambassadors;
