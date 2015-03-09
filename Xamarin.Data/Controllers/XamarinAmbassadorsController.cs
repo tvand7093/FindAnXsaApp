@@ -51,7 +51,7 @@ namespace Xamarin.Data.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,FirstName,MiddleName,LastName,Country,ContactEmail,TwitterHandle,FacebookName,LinkedInName,Blog,IsCertified,PhotoUri,EventPage,Biography,GpsCoordinates,UniversityId")] XamarinAmbassador xamarinAmbassador)
+        public async Task<ActionResult> Create([Bind(Include = "Id,FirstName,MiddleName,LastName,City,StateRegion,Country,ContactEmail,TwitterHandle,FacebookName,LinkedInName,Blog,IsCertified,PhotoUri,EventPage,Biography,GpsCoordinates,UniversityId")] XamarinAmbassador xamarinAmbassador)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +94,7 @@ namespace Xamarin.Data.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,FirstName,MiddleName,LastName,Country,ContactEmail,TwitterHandle,FacebookName,LinkedInName,Blog,IsCertified,PhotoUri,EventPage,Biography,GpsCoordinates,UniversityId")] XamarinAmbassador xamarinAmbassador)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,FirstName,MiddleName,LastName,City,StateRegion,Country,ContactEmail,TwitterHandle,FacebookName,LinkedInName,Blog,IsCertified,PhotoUri,EventPage,Biography,GpsCoordinates,UniversityId")] XamarinAmbassador xamarinAmbassador)
         {
             if (ModelState.IsValid)
             {

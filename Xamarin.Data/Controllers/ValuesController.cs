@@ -8,7 +8,6 @@ using Xamarin.Data.Models;
 
 namespace Xamarin.Data.Controllers
 {
-    [Authorize]
     public class ValuesController : ApiController
     {
         private AmbassadorContext context = new AmbassadorContext();
@@ -16,6 +15,7 @@ namespace Xamarin.Data.Controllers
         // GET api/values
         public IEnumerable<XamarinAmbassador> Get()
         {
+            context.Configuration.ProxyCreationEnabled = false;
             var ambassadors = context.XamarinAmbassadors.ToList();
             return ambassadors;
         }

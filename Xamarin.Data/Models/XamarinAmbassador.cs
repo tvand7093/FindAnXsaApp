@@ -39,10 +39,21 @@ namespace Xamarin.Data.Models
 
         [DataMember]
 #if ASPNET
+        [Display(Name = "City"), Required]
+#endif
+        public String City { get; set; }
+
+        [DataMember]
+#if ASPNET
         [Display(Name = "Country"), Required]
 #endif
         public String Country { get; set; }
 
+        [DataMember]
+#if ASPNET
+        [Display(Name = "State or Region")]
+#endif
+        public String StateRegion { get; set; }
         [DataMember]
 #if ASPNET
         [Display(Name = "Email"), Required, DataType(DataType.EmailAddress)]
@@ -77,7 +88,7 @@ namespace Xamarin.Data.Models
 #if ASPNET
         [Display(Name = "Is Certified")]
 #endif
-        public Boolean? IsCertified { get; set; }
+        public Boolean IsCertified { get; set; }
 
         [DataMember]
 #if ASPNET
